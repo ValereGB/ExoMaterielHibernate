@@ -15,8 +15,10 @@
         <!-- On montre les requestes SQL => ne pas activer en PROD -->
         <property name="show_sql">true</property>
 
-        <mapping class="org.formhibernate.models.Materiel"/>
-
+        <mapping class="org.materiel.models.Materiel"/>
+        <mapping class="org.materiel.models.Client"/>
+        <mapping class="org.materiel.models.Categorie"/>
+        <mapping class="org.materiel.models.FicheLocation"/>
 
     </session-factory>
 </hibernate-configuration>

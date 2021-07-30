@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "Materiel", schema = "materiel")
+@Table(name = "materiel", schema = "materiel")
 public class Materiel {
 
     @Id
@@ -16,12 +16,12 @@ public class Materiel {
     private int prixLocation;
     private Date dateAchat;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<FicheLocation> ficheLocation;
+    @ManyToMany(mappedBy = "materiels")
+    private List<FicheLocation> ficheLocations;
 
     @ManyToOne
     @JoinColumn(name = "idCategorie")
-    private Categorie categories;
+    private Categorie categorie;
 
     public int getId() {return idMateriel;}
     public void setId(int idMateriel) {this.idMateriel = idMateriel;}
@@ -35,9 +35,9 @@ public class Materiel {
     public Date getDateAchat() {return dateAchat;}
     public void setDateAchat(Date dateAchat) {this.dateAchat = dateAchat;}
 
-    public List<FicheLocation> getFicheLocation() {return ficheLocation;}
-    public void setFicheLocation(List<FicheLocation> ficheLocation) {this.ficheLocation = ficheLocation;}
+    public List<FicheLocation> getFicheLocation() {return ficheLocations;}
+    public void setFicheLocation(List<FicheLocation> ficheLocation) {this.ficheLocations = ficheLocations;}
 
-    public Categorie getCategorie() { return categories;}
-    public void setCategorie(Categorie categories) {this.categories = categories;}
+    public Categorie getCategorie() { return categorie;}
+    public void setCategorie(Categorie categorie) {this.categorie = categorie;}
 }

@@ -13,7 +13,7 @@ public class Categorie {
     private String codeCategorie;
     private String libelleCategorie;
 
-    @OneToMany(mappedBy = "category", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "categorie", fetch = FetchType.EAGER)
     private List<Materiel> materiels;
 
     public int getId() {return idCategorie;}
